@@ -64,6 +64,17 @@ body, html {
 
 }
 
+.purchase-interface2 {
+    background: linear-gradient(90deg, rgb(27, 27, 27) 30%, rgb(45, 45, 48) 70%);
+    border-radius: 20px;
+    width: 300px;
+    position: absolute;
+    left: 110%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
 
 .value, .indicator {
     color: rgb(0, 0, 0); /* Texto negro */
