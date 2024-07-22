@@ -8,6 +8,42 @@ if (spanElement) {
 }
 
 
+// Función para convertir texto en mayúsculas y aplicar formato
+function aplicarFormato(elementSelector) {
+    // Obtener el elemento por su selector
+    var element = document.querySelector(elementSelector);
+
+    // Obtener el texto dentro del elemento
+    var texto = element.textContent.trim();
+
+    // Separar el texto por el símbolo $
+    var partes = texto.split('$');
+
+    // Asegurarse de que hay dos partes (texto antes y después de $TOKEN)
+    if (partes.length === 2) {
+        // Obtener la primera parte (antes de $TOKEN) en minúsculas
+        var antes = partes[0].toLowerCase();
+        
+        // Obtener la segunda parte (después de $TOKEN) y quitar los espacios
+        var despues = partes[1].trim().replace(/\s+/g, '');
+
+        // Combinar las partes en mayúsculas y sin espacios
+        var resultado = antes.toUpperCase() + despues.toUpperCase();
+
+        // Actualizar el contenido del elemento
+        element.textContent = resultado;
+    }
+}
+
+// Llamar a la función para el elemento <p> con clase .dashTitle
+aplicarFormato('.dashTitle');
+
+// Llamar a la función para el elemento <label> con id labelText
+aplicarFormato('#labelText');
+
+
+
+
 // Función para preparar el enlace cuando se selecciona un botón
 function prepareLink(buttonId) {
     var link = '';
